@@ -1,5 +1,6 @@
-AC_INIT([hello],[1.0])
+AC_INIT([hello_make], [1.0])
 AM_INIT_AUTOMAKE
-AC_PROG_CC
+AC_LANG(C++)
+AC_PROG_CXX
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT
