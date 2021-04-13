@@ -10,7 +10,7 @@ bool state = true;
 void *provider(void*) {
     while(true) {
         pthread_mutex_lock(&mutex);
-        std::cout << "provider\n";
+        std::cout << "provider" << std::endl;
         pthread_cond_signal(&cond);
         pthread_mutex_unlock(&mutex);
         sleep(1);
@@ -21,7 +21,7 @@ void *consumer(void*) {
     while(true) {
         pthread_mutex_lock(&mutex);
         pthread_cond_wait(&cond, &mutex);
-        std::cout << "consumer\n\n";
+        std::cout << "consumer" << std::endl << std::endl;
         pthread_mutex_unlock(&mutex);
     }
 }
