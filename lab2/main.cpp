@@ -35,8 +35,8 @@ int main() {
     pthread_create(&thread2, nullptr, consumer, nullptr);
     pthread_create(&thread1, nullptr, provider, nullptr);
 
-    pthread_join(thread1, nullptr);
     pthread_join(thread2, nullptr);
+    pthread_join(thread1, nullptr);
 
     pthread_cond_destroy(&cond);
     pthread_mutex_destroy(&mutex);
