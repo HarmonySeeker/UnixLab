@@ -12,8 +12,6 @@ else
 			
 			FILENAME=${FILENAME#//Output:}
 
-			echo $FILENAME
-
 			if [ -z $FILENAME ]; then 
 				echo Error: Invalid destination file name
 				exit 1

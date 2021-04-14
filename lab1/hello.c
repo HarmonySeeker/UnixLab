@@ -5,4 +5,4 @@ int main(void)
 	printf("Hello, world!\n");
 	return 0;
 }
-//Output:                                   hello_binary
+//Output: hello_binary
