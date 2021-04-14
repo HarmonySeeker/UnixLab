@@ -25,15 +25,15 @@ void *provider(void*) {
 
 void *consumer(void*) {
     while (true) {
-	    pthread_mutex_lock(&mutex);
-	    while(!state) {
-		pthread_cond_wait(&cond, &mutex);
-	    	std::cout << "wake request" << std::endl;
-	    }
+	pthread_mutex_lock(&mutex);
+	while(!state) {
+	    pthread_cond_wait(&cond, &mutex);
+	    std::cout << "wake request" << std::endl;
+	}
 
-	    state = !state;
-	    std::cout << "consumer" << std::endl << std::endl;
-	    pthread_mutex_unlock(&mutex);
+	state = !state;
+	std::cout << "consumer" << std::endl << std::endl;
+	pthread_mutex_unlock(&mutex);
     }
 }
 
