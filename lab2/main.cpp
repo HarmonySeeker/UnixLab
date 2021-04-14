@@ -28,7 +28,6 @@ void *consumer(void*) {
 	pthread_mutex_lock(&mutex);
 	while(!state) {
 	    pthread_cond_wait(&cond, &mutex);
-	    std::cout << "wake request" << std::endl;
 	}
 
 	state = !state;
